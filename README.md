@@ -6,6 +6,12 @@ Bem-vindo ao meu portfólio profissional, uma vitrine digital que representa min
 
 ![Capa do Portfólio](assets/images/portfolio-preview.png)
 
+## 🏆 Status do Projeto
+
+[![Última Atualização](https://img.shields.io/github/last-commit/ismapereira/Portifolio-Ismael-Pereira?style=flat-square&color=blueviolet)](https://github.com/ismapereira/Portifolio-Ismael-Pereira)
+[![Status do Projeto](https://img.shields.io/badge/status-ativo-brightgreen?style=flat-square)](https://github.com/ismapereira/Portifolio-Ismael-Pereira)
+[![Visualizações](https://komarev.com/ghpvc/?username=ismapereira&color=blue&style=flat-square)](https://github.com/ismapereira)
+
 ## 🌟 Recursos Principais
 
 - 💻 Design responsivo e moderno
@@ -51,6 +57,16 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
 - Modifique estilos em `assets/css/styles.css`
 - Ajuste comportamentos em `assets/js/main.js`
 
+## 📊 Estatísticas do GitHub
+
+![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=ismapereira&show_icons=true&theme=radical)
+![Linguagens Mais Usadas](https://github-readme-stats.vercel.app/api/top-langs/?username=ismapereira&layout=compact&theme=radical)
+
+## 🤝 Contribuições
+
+Contribuições, problemas e solicitações de recursos são bem-vindos! 
+Sinta-se à vontade para verificar [página de issues](https://github.com/ismapereira/Portifolio-Ismael-Pereira/issues).
+
 ## 📱 Responsividade
 
 O portfólio é totalmente responsivo, com suporte para:
@@ -79,17 +95,10 @@ Recursos do formulário:
 - Transições e animações suaves
 - Acessibilidade considerada
 
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-- Reportar bugs
-- Sugerir melhorias
-- Fazer fork do projeto
-
 ## 📄 Licença
 
-Este projeto está sob licença MIT. Veja `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-**Desenvolvido com ❤️ por Ismael Pereira**
+🌟 **Feito com ❤️ por Ismael Pereira**
