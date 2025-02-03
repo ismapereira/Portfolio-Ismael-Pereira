@@ -57,11 +57,6 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
 - Modifique estilos em `assets/css/styles.css`
 - Ajuste comportamentos em `assets/js/main.js`
 
-## 📊 Estatísticas do GitHub
-
-![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=ismapereira&show_icons=true&theme=radical)
-![Linguagens Mais Usadas](https://github-readme-stats.vercel.app/api/top-langs/?username=ismapereira&layout=compact&theme=radical)
-
 ## 🤝 Contribuições
 
 Contribuições, problemas e solicitações de recursos são bem-vindos! 
