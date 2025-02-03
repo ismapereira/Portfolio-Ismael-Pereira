@@ -64,6 +64,29 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
 - [ ] Melhorar otimização de performance
 - [ ] Adicionar internacionalização
 
+### [2024-02-03] - Melhorias na Página Inicial
+- **Novo Recurso**: Adicionado efeito de bolhas dinâmicas na seção inicial
+  - Bolhas flutuantes com gradientes suaves
+  - Cores em tons de verde e azul
+  - Animação orgânica e responsiva
+  - Opacidade e desfoque personalizados
+- Otimização do background da página inicial
+- Melhoria na experiência visual e interatividade
+
+### Detalhes Técnicos do Efeito de Bolhas
+- **Tecnologias**: CSS Animation, JavaScript Dynamics
+- **Características**:
+  - Tamanho das bolhas: 50-200px
+  - Opacidade: 0.3
+  - Cores: Gradientes em verde e azul
+  - Animação: Flutuação suave
+  - Geração dinâmica com JavaScript
+
+## 🚀 Próximas Implementações
+- [ ] Adicionar modo escuro
+- [ ] Implementar animações de scroll
+- [ ] Criar seção de certificações
+
 ## 🤝 Guia de Contribuição
 
 ### Como Contribuir

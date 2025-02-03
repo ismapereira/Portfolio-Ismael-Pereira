@@ -1,0 +1,43 @@
+/* Efeito de Bolhas Suaves */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    bottom: -100px;
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+@keyframes float-bubble {
+    0% { 
+        transform: translateY(0) scale(0.7);
+        opacity: 0.3;
+    }
+    100% { 
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .bubble {
+        display: none;
+    }
+}
