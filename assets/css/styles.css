@@ -36,40 +36,71 @@ body {
 /* Cabeçalho */
 header {
     position: fixed;
-    width: 100%;
     top: 0;
-    background-color: var(--color-background-light);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px var(--color-shadow);
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background-light); /* Voltando à cor original */
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow sutil */
     padding: 0.25rem 5%;
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 50px;
+    height: 50px; /* Redução adicional da altura */
 }
 
-nav .logo {
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Redução do espaçamento */
+    margin-left: auto;
+}
+
+header nav .logo {
     display: flex;
     align-items: center;
 }
 
-nav .logo .name-logo {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--color-secondary);
+header nav ul li a {
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: 0.85rem; /* Redução adicional do tamanho da fonte */
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
 }
 
-nav .logo .name-logo:hover {
-    color: var(--color-hover);
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px; /* Ajuste fino */
+    left: 0;
+    background-color: var(--color-hover);
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover {
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .logo .name-logo {
+    font-size: 1.1rem;
+    margin-left: 10px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none; /* Garantir que não haja underline */
 }
 
 nav .logo img {

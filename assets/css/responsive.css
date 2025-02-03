@@ -23,11 +23,11 @@
     }
 
     /* Ocultar menu de navegação padrão */
-    nav ul {
-        display: none;
+    header nav ul {
+        display: none !important;
     }
 
-    /* Estilização do ícone do menu hambúrguer */
+    /* Mostrar menu hambúrguer */
     .menu-toggle {
         display: block;
         position: absolute;
@@ -81,7 +81,7 @@
         transform: rotate(-45deg);
     }
 
-    /* Menu Mobile */
+    /* Estilos para Menu Mobile */
     .mobile-menu {
         display: block;
         position: fixed;
@@ -89,7 +89,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background-color: var(--color-background-dark);
+        background-color: var(--color-background-light);
         z-index: 1000;
         transition: left 0.5s ease-in-out;
         opacity: 0;
