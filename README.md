@@ -51,6 +51,60 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
 
 2. Abra o arquivo `index.html` no seu navegador
 
+## 🔄 Changelog
+
+### [1.0.0] - Data da Primeira Versão
+- Versão inicial do portfólio
+- Implementação das seções: Home, Sobre, Habilidades, Projetos, Contato
+- Adição de design responsivo
+- Integração com EmailJS para formulário de contato
+
+### [1.1.0] - Próxima Versão Planejada
+- [ ] Adicionar animações de transição
+- [ ] Melhorar otimização de performance
+- [ ] Adicionar internacionalização
+
+## 🤝 Guia de Contribuição
+
+### Como Contribuir
+
+1. **Faça um Fork do Repositório**
+   - Clique no botão "Fork" no topo da página do GitHub
+
+2. **Clone o Repositório**
+   ```bash
+   git clone https://github.seu-usuario/Portifolio-Ismael-Pereira.git
+   cd Portifolio-Ismael-Pereira
+   ```
+
+3. **Crie uma Branch para sua Contribuição**
+   ```bash
+   git checkout -b feature/sua-feature
+   ```
+
+### Diretrizes de Contribuição
+
+- Siga o estilo de código existente
+- Adicione comentários explicativos quando necessário
+- Teste completamente suas alterações antes de enviar um Pull Request
+- Mantenha as alterações concisas e focadas
+
+### Reportando Problemas
+
+- Use a seção de Issues do GitHub
+- Descreva detalhadamente o problema
+- Inclua passos para reproduzir
+- Mencione sua versão de navegador e sistema operacional
+
+### Processo de Pull Request
+
+1. Faça suas alterações
+2. Commit com mensagens claras
+3. Envie seu Pull Request
+4. Aguarde revisão
+
+**Nota**: Todas as contribuições são bem-vindas! 🌟
+
 ## 🔧 Personalização
 
 - Altere informações pessoais em `index.html`
