@@ -533,6 +533,153 @@ h1, h2, h3 {
     background-color: var(--color-secondary);
 }
 
+/* Media Queries para Responsividade Avançada */
+
+/* Tablets (até 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Layout Geral */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Cabeçalho */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    /* Navegação */
+    .nav-menu {
+        display: none; /* Preparar para menu hambúrguer */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Seções */
+    section {
+        padding: 40px 0;
+    }
+
+    /* Habilidades */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Projetos */
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Formulário de Contato */
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dispositivos Móveis (até 768px) */
+@media screen and (max-width: 768px) {
+    /* Tipografia */
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 250px;
+        margin: 20px auto;
+    }
+
+    /* Habilidades */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Botões */
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+/* Dispositivos Muito Pequenos (até 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajustes específicos para telas pequenas */
+    .hero-image {
+        max-width: 200px;
+    }
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Impressão */
+@media print {
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .back-to-top,
+    .menu-toggle {
+        display: none;
+    }
+}
+
 /* Media Queries para Responsividade */
 @media screen and (max-width: 1024px) {
     /* Ajustes gerais para tablets */
