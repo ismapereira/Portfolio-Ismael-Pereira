@@ -1,0 +1,62 @@
+/* Responsividade para Dispositivos Menores */
+
+/* Tablets e Dispositivos Médios */
+@media screen and (max-width: 1024px) {
+    nav ul {
+        display: none; /* Esconde menu para mobile */
+    }
+
+    /* Adicionar menu hambúrguer */
+    .menu-toggle {
+        display: block;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Smartphones e Dispositivos Pequenos */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 3rem 5%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* Dispositivos Muito Pequenos */
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
