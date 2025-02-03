@@ -64,6 +64,11 @@ Implementação de menu mobile com:
 - Animações de entrada para seções
 - Efeitos de hover interativos
 - Transições suaves entre estados
+- **Efeito de Digitação na Página Inicial**
+  - Animação de texto que simula digitação
+  - Revelação gradual do título e subtítulo
+  - Cursor piscante para efeito realista
+  - Transição suave de opacidade
 - Micro-interações para melhor experiência do usuário
 
 ## 🤝 Contribuições

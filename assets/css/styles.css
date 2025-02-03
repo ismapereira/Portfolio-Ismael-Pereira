@@ -372,6 +372,26 @@ h1, h2, h3 {
     color: var(--color-text-secondary);
 }
 
+/* Animação de Digitação */
+.hero h1, .hero p {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.hero h1::after, .hero p::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* Seção Sobre */
 .about {
     display: flex;
