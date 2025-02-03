@@ -12,6 +12,7 @@ Bem-vindo ao meu portfólio profissional, uma vitrine digital que representa min
 - 🎨 Interface elegante e minimalista
 - 📱 Totalmente adaptável a dispositivos móveis
 - ⚡ Carregamento rápido e performance otimizada
+- 🌈 Design consistente e acessível
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -42,17 +43,34 @@ git clone https://github.com/ismapereira/portfolio.git
 - Modifique estilos em `assets/css/styles.css`
 - Ajuste comportamentos em `assets/js/main.js`
 
-## 📸 Screenshots
+## 📱 Responsividade
 
-### Página Inicial
-![Home](assets/images/screenshots/home.png)
+O portfólio é totalmente responsivo, com suporte para:
+- Desktops
+- Tablets
+- Smartphones
+- Modo de impressão
 
-### Seção de Projetos
-![Projetos](assets/images/screenshots/projetos.png)
+## 🎨 Personalização de Estilo
+
+Variáveis CSS personalizáveis no arquivo `styles.css`:
+```css
+:root {
+  --color-primary: #2C3E50;
+  --color-secondary: #3498DB;
+  --color-text: #333;
+  --font-primary: 'Poppins', sans-serif;
+}
+```
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Por favor, leia as diretrizes de contribuição antes de enviar um pull request.
+Contribuições são bem-vindas! Por favor, siga estas etapas:
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
 
 ## 📄 Licença
 
