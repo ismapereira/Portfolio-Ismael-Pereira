@@ -1,10 +1,10 @@
 # 🚀 Portfólio Pessoal - Ismael Pereira
 
+![Capa do Portfólio](/assets/images/capa-portfolio.png)
+
 ## 📌 Visão Geral
 
 Bem-vindo ao meu portfólio profissional, uma vitrine digital que representa minha jornada como desenvolvedor web.
-
-![Capa do Portfólio](assets/images/portfolio-preview.png)
 
 ## 🏆 Status do Projeto
 
