@@ -766,3 +766,124 @@ h1, h2, h3 {
         height: 200px;
     }
 }
+
+/* Novas Animações Globais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aplicar animações em seções e elementos */
+.home, .about, .skills, .projects, .contact {
+    animation: fadeInUp 1s ease-out;
+}
+
+.skill-item {
+    animation: slideInLeft 0.7s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.project-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn {
+    animation: pulse 2s infinite;
+}
+
+/* Melhorar hover de ícones */
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* Efeitos de Cursor Personalizados */
+body {
+    cursor: default;
+}
+
+a, button, .skill-item, .project-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a:hover, button:hover, .skill-item:hover, .project-card:hover {
+    cursor: pointer;
+}
+
+/* Adicionar um leve brilho em elementos interativos */
+a:hover, button:hover, .skill-item:hover, .project-card:hover {
+    filter: brightness(1.1);
+}
+
+/* Micro-interações */
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-hover);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px var(--color-shadow);
+}
+
+.project-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
