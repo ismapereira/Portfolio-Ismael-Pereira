@@ -13,6 +13,7 @@ Bem-vindo ao meu portfólio profissional, uma vitrine digital que representa min
 - 📱 Totalmente adaptável a dispositivos móveis
 - ⚡ Carregamento rápido e performance otimizada
 - 🌈 Design consistente e acessível
+- 🍔 Menu hambúrguer interativo para dispositivos móveis
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -49,39 +50,35 @@ O portfólio é totalmente responsivo, com suporte para:
 - Desktops
 - Tablets
 - Smartphones
-- Modo de impressão
 
-## 🎨 Personalização de Estilo
+### 🍔 Menu Hambúrguer
 
-Variáveis CSS personalizáveis no arquivo `styles.css`:
-```css
-:root {
-  --color-primary: #2C3E50;
-  --color-secondary: #3498DB;
-  --color-text: #333;
-  --font-primary: 'Poppins', sans-serif;
-}
-```
+Implementação de menu mobile com:
+- Animações suaves de entrada e saída
+- Efeito de sobreposição para melhor foco
+- Transições intuitivas
+- Acessibilidade aprimorada
+
+## 🎨 Animações
+
+- Animações de entrada para seções
+- Efeitos de hover interativos
+- Transições suaves entre estados
+- Micro-interações para melhor experiência do usuário
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Por favor, siga estas etapas:
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE.md` para mais detalhes.
 
 ## 📞 Contato
 
-**Ismael Pereira**
-- 📧 Email: ismaelpereirafeitosa@hotmail.com
-- 🔗 LinkedIn: [Ismael Pereira](https://www.linkedin.com/in/ismael-pereira-feitosa-ba2aa91a9/)
-- 💻 GitHub: [@ismapereira](https://github.com/ismapereira)
+- **Email**: ismaelpereirafeitosa@hotmail.com
+- **LinkedIn**: [Ismael Pereira](https://www.linkedin.com/in/ismael-pereira-feitosa-ba2aa91a9/)
+- **GitHub**: [@ismapereira](https://github.com/ismapereira)
 
 ---
 
