@@ -82,6 +82,22 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
   - Animação: Flutuação suave
   - Geração dinâmica com JavaScript
 
+## 🌈 Melhorias Recentes
+
+### Efeito de Bolhas de Fundo
+
+Implementamos uma solução avançada para o efeito de bolhas de fundo, garantindo:
+
+- 📱 **Responsividade Total**: Adaptação dinâmica em diferentes dispositivos
+- 🖥️ **Escalabilidade**: Ajuste automático de tamanho e quantidade de bolhas
+- ⚡ **Otimização de Performance**: Redução de bolhas em telas menores
+- 🎨 **Experiência Visual Consistente**: Manutenção do estilo original em todas as resoluções
+
+#### Detalhes Técnicos
+- **JavaScript Dinâmico**: Criação responsiva de bolhas
+- **CSS Media Queries**: Ajuste fino de estilos
+- **Tratamento de Erros**: Prevenção de problemas de renderização
+
 ## 🚀 Próximas Implementações
 - [ ] Adicionar modo escuro
 - [ ] Implementar animações de scroll

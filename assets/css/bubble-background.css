@@ -35,9 +35,19 @@
     }
 }
 
-/* Responsividade */
+/* Responsividade Melhorada */
 @media (max-width: 768px) {
     .bubble {
-        display: none;
+        max-width: 80px !important;
+        max-height: 80px !important;
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .bubble {
+        max-width: 50px !important;
+        max-height: 50px !important;
+        opacity: 0.1;
     }
 }

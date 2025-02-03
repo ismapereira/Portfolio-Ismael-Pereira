@@ -17,8 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
 
-        // Tamanho aleatório
-        const size = Math.random() * 150 + 50; // 50-200px
+        // Tamanho responsivo baseado na largura da tela
+        const screenWidth = window.innerWidth;
+        let maxSize, minSize;
+
+        if (screenWidth > 1200) {
+            maxSize = 200;
+            minSize = 50;
+        } else if (screenWidth > 768) {
+            maxSize = 150;
+            minSize = 40;
+        } else if (screenWidth > 480) {
+            maxSize = 100;
+            minSize = 30;
+        } else {
+            maxSize = 80;
+            minSize = 20;
+        }
+
+        const size = Math.random() * (maxSize - minSize) + minSize;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
 
@@ -40,13 +57,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Remover e recriar bolha após animação
         bubble.addEventListener('animationiteration', () => {
-            bubbleContainer.removeChild(bubble);
-            bubbleContainer.appendChild(createBubble());
+            // Verificação de segurança antes de remover e adicionar
+            if (bubble.parentNode === bubbleContainer) {
+                bubbleContainer.removeChild(bubble);
+                const newBubble = createBubble();
+                if (newBubble instanceof Node) {
+                    bubbleContainer.appendChild(newBubble);
+                }
+            }
         });
+
+        return bubble;
     }
 
-    // Criar múltiplas bolhas
-    for (let i = 0; i < 20; i++) {
-        createBubble();
+    // Ajustar número de bolhas baseado no tamanho da tela
+    function adjustBubbleCount() {
+        const screenWidth = window.innerWidth;
+        let bubbleCount;
+
+        if (screenWidth > 1200) {
+            bubbleCount = 20;
+        } else if (screenWidth > 768) {
+            bubbleCount = 15;
+        } else if (screenWidth > 480) {
+            bubbleCount = 10;
+        } else {
+            bubbleCount = 5;
+        }
+
+        // Limpar bolhas existentes
+        bubbleContainer.innerHTML = '';
+
+        // Criar novas bolhas
+        for (let i = 0; i < bubbleCount; i++) {
+            const bubble = createBubble();
+            if (bubble instanceof Node) {
+                bubbleContainer.appendChild(bubble);
+            }
+        }
     }
+
+    // Chamar no carregamento e ao redimensionar
+    adjustBubbleCount();
+    window.addEventListener('resize', adjustBubbleCount);
 });
