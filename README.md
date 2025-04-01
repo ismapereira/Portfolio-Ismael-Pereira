@@ -21,6 +21,7 @@ Bem-vindo ao meu portfólio profissional, uma vitrine digital que representa min
 - 🌈 Design consistente e acessível
 - 🍔 Menu hambúrguer interativo
 - 📧 Formulário de contato funcional com validação
+- 🔍 Sistema de filtro de projetos por categorias
 
 ## 🛠 Tecnologias e Bibliotecas
 

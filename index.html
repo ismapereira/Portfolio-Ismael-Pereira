@@ -289,8 +289,16 @@
                 <h2>Meus Projetos</h2>
             </div>
             
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="landing">Landing Pages</button>
+                <button class="filter-btn" data-filter="cards">Cards Profissionais</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="sistemas">Sistemas Web</button>
+            </div>
+            
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="landing">
                     <div class="project-image">
                         <img src="assets/images/projetos/projeto1.png" alt="Página da AllStar Sports">
                     </div>
@@ -315,7 +323,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="sistemas">
                     <div class="project-image">
                         <img src="assets/images/projetos/projeto2.png" alt="Encantella">
                     </div>
@@ -341,7 +349,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="landing">
                     <div class="project-image">
                         <img src="assets/images/projetos/projeto3.png" alt="Instituto Parquelândia">
                     </div>
@@ -367,7 +375,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="sistemas">
                     <div class="project-image">
                         <img src="assets/images/projetos/projeto4.png" alt="AllStar Sports Sistema">
                     </div>
@@ -505,5 +513,36 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/gsap-modern.js"></script>
+    <script>
+        // Script simples para filtrar projetos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover classe ativa de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao botão clicado
+                    button.classList.add('active');
+                    
+                    // Obter o valor do filtro
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filtrar os projetos
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

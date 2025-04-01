@@ -706,6 +706,38 @@ section {
   gap: var(--space-xl);
 }
 
+.project-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  color: var(--color-light);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: rgba(100, 255, 218, 0.05);
+}
+
+.filter-btn.active {
+  background-color: rgba(100, 255, 218, 0.1);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
 .project-card {
   background-color: rgba(10, 25, 47, 0.7);
   border-radius: var(--radius-md);
