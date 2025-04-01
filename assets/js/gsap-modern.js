@@ -712,68 +712,81 @@ function initHoverAnimations() {
   });
 }
 
-// Mobile Menu
+// Mobile Menu Initialization
 function initMobileMenu() {
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-menu a');
   
-  if (!menuToggle || !mobileMenu) return;
+  if (!menuToggle || !mobileMenu) {
+    console.log("Menu móvel não encontrado");
+    return;
+  }
   
-  let isOpen = false;
+  console.log("Inicializando menu móvel");
   
-  const menuTl = gsap.timeline({ paused: true });
-  
-  menuTl
-    .to(mobileMenu, {
-      x: '0%',
-      duration: 0.5,
-      ease: 'power3.out'
-    })
-    .from(mobileLinks, {
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.3,
-      ease: 'power2.out'
-    }, '-=0.2');
-  
-  menuToggle.addEventListener('click', () => {
-    if (isOpen) {
-      menuTl.reverse();
-      menuToggle.classList.remove('active');
-    } else {
-      menuTl.play();
-      menuToggle.classList.add('active');
-    }
-    
-    isOpen = !isOpen;
+  // Garantir que o menu esteja inicialmente escondido e com z-index correto
+  gsap.set(mobileMenu, { 
+    x: '100%',
+    zIndex: 99
   });
   
-  // Close mobile menu when clicking on a link
+  // Variável para controlar o estado do menu
+  let menuOpen = false;
+  
+  // Função para abrir o menu
+  function openMenu() {
+    gsap.to(mobileMenu, {
+      x: '0%',
+      duration: 0.4,
+      ease: 'power3.out',
+      onComplete: () => {
+        menuOpen = true;
+      }
+    });
+    
+    menuToggle.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+  
+  // Função para fechar o menu
+  function closeMenu() {
+    gsap.to(mobileMenu, {
+      x: '100%',
+      duration: 0.4,
+      ease: 'power3.out',
+      onComplete: () => {
+        menuOpen = false;
+      }
+    });
+    
+    menuToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+  
+  // Adicionar evento de clique ao botão do menu
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    console.log("Menu toggle clicado");
+    
+    if (menuOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  // Fechar o menu quando um link é clicado
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menuTl.reverse();
-      menuToggle.classList.remove('active');
-      isOpen = false;
+    link.addEventListener('click', function() {
+      closeMenu();
     });
   });
   
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (isOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      menuTl.reverse();
-      menuToggle.classList.remove('active');
-      isOpen = false;
-    }
-  });
-  
-  // Update mobile menu state on window resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && isOpen) {
-      menuTl.reverse();
-      menuToggle.classList.remove('active');
-      isOpen = false;
+  // Fechar o menu ao pressionar a tecla ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menuOpen) {
+      closeMenu();
     }
   });
 }
@@ -917,7 +930,7 @@ function createFooterParticles() {
   const particleCount = 15;
   
   // Criar partículas
-  for (let i = 0; i < particleCount; i++) {
+  for (let i = 0; i <particleCount; i++) {
     const particle = document.createElement('div');
     particle.classList.add('footer-particle');
     

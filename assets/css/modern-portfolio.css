@@ -326,18 +326,28 @@ section {
   position: fixed;
   top: 0;
   right: 0;
-  width: 75%;
-  max-width: 400px;
+  width: 100%;
   height: 100vh;
-  background-color: var(--color-darker);
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 99;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: var(--space-xl);
   transform: translateX(100%);
-  transition: transform 0.3s var(--transition-cubic);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: -10px 0 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.mobile-menu-container {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
 }
 
 .mobile-menu ul {
@@ -345,14 +355,79 @@ section {
   flex-direction: column;
   gap: var(--space-lg);
   text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .mobile-menu a {
   color: var(--color-light);
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.25rem;
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) 0;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.mobile-menu a:hover {
+  color: var(--color-primary);
+}
+
+.mobile-menu a .nav-number {
   display: inline-block;
-  padding: var(--space-xs) 0;
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.mobile-menu-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.mobile-menu-social a {
+  color: var(--color-light);
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(100, 255, 218, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: var(--transition);
+}
+
+.mobile-menu-social a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+}
+
+.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+  }
 }
 
 /* ===== HERO SECTION ===== */
@@ -1139,6 +1214,147 @@ section {
   
   .footer-column:hover {
     transform: translateY(-3px);
+  }
+  
+  .mobile-menu {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .hero-content {
+    padding: 0 var(--space-md);
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    margin-top: var(--space-xl);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    flex-direction: column;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .project-content {
+    width: 100%;
+    padding: var(--space-lg);
+  }
+  
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-info, .contact-form {
+    width: 100%;
+  }
+  
+  .contact-info {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .section-heading h2 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-name {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+  
+  .hero-tagline {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-contact-item {
+    justify-content: center;
+  }
+  
+  .footer-links a::before {
+    display: inline-block;
+  }
+  
+  .footer-column:hover {
+    transform: translateY(-3px);
+  }
+  
+  .mobile-menu {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .hero-cta {
+    width: 100%;
+  }
+  
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+  
+  .project-tags {
+    flex-wrap: wrap;
+  }
+  
+  .footer-social a {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .footer-social a i {
+    font-size: 2rem;
   }
 }
 
