@@ -24,8 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (form) {
             const submitButton = form.querySelector('button[type="submit"]');
             
-            // Inicializar EmailJS (adicione suas credenciais)
-            emailjs.init("J3NvibQuHD_o_q_8Y"); // Substitua pelo seu User ID do EmailJS
+            // Inicializar EmailJS com a chave pública
+            // Usando try/catch para evitar erros caso o EmailJS não esteja carregado
+            try {
+                emailjs.init("J3NvibQuHD_o_q_8Y");
+            } catch (error) {
+                console.error("Erro ao inicializar EmailJS:", error);
+            }
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -46,45 +51,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 // Log de depuração
-                console.log('Dados enviados para EmailJS:', {
-                    name: formData.from_name,
-                    email: formData.from_email,
-                    phone: formData.from_phone,
-                    message: formData.message
-                });
+                console.log('Dados enviados para EmailJS:', formData);
 
-                // Enviar email usando EmailJS
-                emailjs.send(
-                    "email_ismaelportifolio",    // Substitua pelo seu Service ID
-                    "template_i1c5xzj",   // Substitua pelo seu Template ID
-                    formData
-                ).then(
-                    function(response) {
-                        // Sucesso no envio
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Mensagem Enviada!',
-                            text: 'Obrigado por entrar em contato. Retornarei em breve.',
-                            confirmButtonColor: '#64ffda'
-                        });
-                        form.reset();
-                        telefoneMask.value = ''; // Limpar máscara
-                    },
-                    function(error) {
-                        // Erro no envio
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Ops! Algo deu errado',
-                            text: 'Não foi possível enviar a mensagem. Por favor, tente novamente.',
-                            confirmButtonColor: '#ee9b00'
-                        });
-                        console.error('Erro no EmailJS:', error);
-                    }
-                ).finally(() => {
-                    // Reabilitar botão
+                // Verificar se o EmailJS está disponível
+                if (typeof emailjs !== 'undefined') {
+                    // Enviar email usando EmailJS
+                    emailjs.send(
+                        "service_ismaelportifolio",    // Serviço atualizado
+                        "template_i1c5xzj",            // Template ID
+                        formData
+                    ).then(
+                        function(response) {
+                            // Sucesso no envio
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Mensagem Enviada!',
+                                text: 'Obrigado por entrar em contato. Retornarei em breve.',
+                                confirmButtonColor: '#64ffda'
+                            });
+                            form.reset();
+                            telefoneMask.value = ''; // Limpar máscara
+                        },
+                        function(error) {
+                            // Erro no envio
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops! Algo deu errado',
+                                text: 'Não foi possível enviar a mensagem. Por favor, tente novamente.',
+                                confirmButtonColor: '#ee9b00'
+                            });
+                            console.error('Erro no EmailJS:', error);
+                        }
+                    ).finally(() => {
+                        // Reabilitar botão
+                        submitButton.textContent = 'Enviar Mensagem';
+                        submitButton.disabled = false;
+                    });
+                } else {
+                    // Se o EmailJS não estiver disponível
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro de Configuração',
+                        text: 'O serviço de email não está disponível no momento.',
+                        confirmButtonColor: '#ee9b00'
+                    });
                     submitButton.textContent = 'Enviar Mensagem';
                     submitButton.disabled = false;
-                });
+                }
             });
 
             // Função de validação de formulário

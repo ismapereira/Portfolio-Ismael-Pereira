@@ -1,7 +1,7 @@
 // Modern Portfolio GSAP Animations
 document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP plugins
-  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+  gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
   
   // Disable scrolling during initial animation
   document.body.classList.add('no-scroll');
@@ -805,13 +805,10 @@ function initBackToTop() {
   backToTopBtn.addEventListener('click', (e) => {
     e.preventDefault();
     
-    gsap.to(window, {
-      scrollTo: {
-        y: 0,
-        autoKill: false
-      },
-      duration: 1,
-      ease: 'power2.inOut'
+    // Usando window.scrollTo nativo em vez do GSAP scrollTo
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }
