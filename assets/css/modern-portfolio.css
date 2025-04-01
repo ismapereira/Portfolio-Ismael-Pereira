@@ -981,10 +981,9 @@ section {
 
 .footer-social a {
   color: var(--color-light);
-  font-size: 1.5rem;
   transition: var(--transition);
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -993,6 +992,7 @@ section {
   border: 1px solid rgba(100, 255, 218, 0.1);
   position: relative;
   overflow: hidden;
+  opacity: 1;
 }
 
 .footer-social a::before {
@@ -1021,6 +1021,8 @@ section {
 .footer-social a i {
   position: relative;
   z-index: 1;
+  font-size: 3rem;
+  opacity: 1;
 }
 
 .footer-text {

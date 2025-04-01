@@ -842,15 +842,26 @@ function initFooterAnimation() {
   // Selecionar elementos
   const footerColumns = document.querySelectorAll('.footer-column');
   const footerBottom = document.querySelector('.footer-bottom');
-  const footerSocial = document.querySelector('.footer-social');
+  const socialLinks = document.querySelectorAll('.footer-social a');
   
   // Verificar se os elementos existem
-  if (!footerColumns.length || !footerBottom || !footerSocial) {
+  if (!footerColumns.length || !footerBottom) {
     console.log("Elementos do footer não encontrados");
     return;
   }
   
   console.log("Inicializando animação do footer");
+  
+  // Garantir que os links sociais estejam visíveis
+  if (socialLinks.length) {
+    socialLinks.forEach(link => {
+      link.style.opacity = "1";
+      const icon = link.querySelector('i');
+      if (icon) icon.style.opacity = "1";
+    });
+  } else {
+    console.log("Links sociais não encontrados");
+  }
   
   // Animação simples para os elementos do footer
   gsap.from(footerColumns, {
@@ -870,14 +881,23 @@ function initFooterAnimation() {
     delay: 0.8
   });
   
-  gsap.from(footerSocial.querySelectorAll('a'), {
-    scale: 0.5,
-    opacity: 0,
-    duration: 0.4,
-    stagger: 0.1,
-    ease: 'back.out(1.7)',
-    delay: 1
-  });
+  // Animação específica para os links sociais
+  if (socialLinks.length) {
+    gsap.from(socialLinks, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'back.out(1.7)',
+      delay: 1,
+      onComplete: () => {
+        // Garantir que os ícones permaneçam visíveis após a animação
+        socialLinks.forEach(link => {
+          link.style.opacity = "1";
+        });
+      }
+    });
+  }
 }
 
 // Criar partículas para o footer
