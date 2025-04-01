@@ -84,19 +84,63 @@ git clone https://github.com/ismapereira/Portifolio-Ismael-Pereira.git
 
 ## 🌈 Melhorias Recentes
 
-### Efeito de Bolhas de Fundo
+### [2025-03-31] - Aprimoramentos Visuais e Funcionais
 
-Implementamos uma solução avançada para o efeito de bolhas de fundo, garantindo:
+#### 🎭 Animações Avançadas com GSAP
+- **Animações de Entrada**: Implementação de animações suaves para cada seção
+- **Efeitos de Scroll**: Elementos aparecem gradualmente conforme o usuário rola a página
+- **Transições Fluidas**: Movimentos naturais e orgânicos entre estados
+- **Efeito de Digitação**: Animação de texto sendo digitado na seção inicial
+- **Parallax Sutil**: Elementos se movem em velocidades diferentes durante a rolagem
 
-- 📱 **Responsividade Total**: Adaptação dinâmica em diferentes dispositivos
-- 🖥️ **Escalabilidade**: Ajuste automático de tamanho e quantidade de bolhas
-- ⚡ **Otimização de Performance**: Redução de bolhas em telas menores
-- 🎨 **Experiência Visual Consistente**: Manutenção do estilo original em todas as resoluções
+#### 🎨 Design Aprimorado
+- **Cards de Projetos**: Redesenhados com hover effects e informações mais claras
+- **Seção de Habilidades**: Barras de progresso animadas e cards interativos
+- **Footer Redesenhado**: Layout mais completo com informações de contato e links úteis
+- **Ícones Sociais**: Botões maiores e mais interativos para melhor experiência do usuário
+- **Efeito de Partículas**: Adicionado ao footer para criar uma experiência visual envolvente
 
-#### Detalhes Técnicos
-- **JavaScript Dinâmico**: Criação responsiva de bolhas
-- **CSS Media Queries**: Ajuste fino de estilos
-- **Tratamento de Erros**: Prevenção de problemas de renderização
+#### 📱 Responsividade Aperfeiçoada
+- **Menu Móvel Otimizado**: Reconstrução completa do menu para dispositivos móveis
+- **Navegação Intuitiva**: Menu hambúrguer com animação suave e links facilmente acessíveis
+- **Adaptação Dinâmica**: Layout se ajusta perfeitamente a qualquer tamanho de tela
+- **Ícones Sociais no Menu Móvel**: Acesso rápido a redes sociais em dispositivos móveis
+- **Experiência Consistente**: Mesma qualidade visual em desktop e dispositivos móveis
+
+#### ⚡ Otimizações de Performance
+- **Carregamento Otimizado**: Recursos carregados de forma eficiente
+- **Animações Eficientes**: Uso de GSAP para animações de alta performance
+- **Código Refatorado**: JavaScript e CSS limpos e bem organizados
+- **Transições Suaves**: Animações otimizadas para não sobrecarregar o navegador
+- **Compatibilidade**: Testado em múltiplos navegadores e dispositivos
+
+#### 🔄 Formulário de Contato Aprimorado
+- **Validação em Tempo Real**: Feedback imediato durante o preenchimento
+- **Mensagens de Erro Claras**: Instruções precisas para correção de dados
+- **Integração EmailJS**: Sistema confiável para envio de mensagens
+- **Feedback Visual**: Confirmação de envio com animações suaves
+- **Campos Formatados**: Máscaras para telefone e validação de email
+
+### Detalhes Técnicos das Implementações
+
+#### GSAP (GreenSock Animation Platform)
+- **ScrollTrigger**: Animações baseadas na posição de rolagem
+- **TextPlugin**: Efeitos de digitação e manipulação de texto
+- **Timeline**: Sequências complexas de animação sincronizadas
+- **Easing Functions**: Movimentos naturais e orgânicos
+
+#### Efeito de Partículas no Footer
+- **Geração Dinâmica**: Partículas criadas via JavaScript
+- **Animação CSS**: Movimento fluido e eficiente
+- **Posicionamento Aleatório**: Distribuição natural dos elementos
+- **Responsividade**: Ajuste automático baseado no tamanho da tela
+
+#### Menu Móvel Aprimorado
+- **Estrutura HTML Otimizada**: Organização clara dos elementos
+- **Animações Suaves**: Transições entre estados aberto/fechado
+- **Controle de Estado**: Lógica robusta para gerenciar interações
+- **Acessibilidade**: Suporte a navegação por teclado (tecla ESC)
+- **Links Sociais**: Integração com redes sociais diretamente no menu
 
 ## 🚀 Próximas Implementações
 - [ ] Adicionar modo escuro
