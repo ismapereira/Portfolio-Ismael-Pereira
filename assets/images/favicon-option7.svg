@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Favicon Option 7</title>
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#64ffda" />
+            <stop offset="50%" stop-color="#0a9396" />
+            <stop offset="100%" stop-color="#ee9b00" />
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0a192f" x="0" y="0" width="32" height="32" rx="8"></rect>
+        <path d="M16,5 L27,16 L16,27 L5,16 Z" fill="url(#gradient)" stroke="#e6f1ff" stroke-width="1"></path>
+        <text font-family="JetBrains Mono, monospace" font-size="16" font-weight="bold" fill="#e6f1ff">
+            <tspan x="12" y="21">I</tspan>
+        </text>
+    </g>
+</svg>
