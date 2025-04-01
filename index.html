@@ -32,318 +32,428 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-option1.svg">
     
-    <!-- Fontes do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/bubble-background.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/modern-portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 </head>
 <body>
-    <!-- Cabeçalho de Navegação -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#home" class="name-logo">Ismael Pereira</a>
+    <!-- Loader Animation -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">Ismael Pereira</div>
+            <div class="loader-progress-container">
+                <div class="loader-progress"></div>
             </div>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <div class="menu-toggle" aria-label="Menu de Navegação">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+            <div class="loader-text">0%</div>
+        </div>
+    </div>
 
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">Ismael Pereira</a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home"><span class="nav-number">01.</span>Início</a></li>
+                <li><a href="#about"><span class="nav-number">02.</span>Sobre</a></li>
+                <li><a href="#skills"><span class="nav-number">03.</span>Habilidades</a></li>
+                <li><a href="#projects"><span class="nav-number">04.</span>Projetos</a></li>
+                <li><a href="#contact"><span class="nav-number">05.</span>Contato</a></li>
+            </ul>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
     <nav class="mobile-menu">
         <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#home"><span class="nav-number">01.</span>Início</a></li>
+            <li><a href="#about"><span class="nav-number">02.</span>Sobre</a></li>
+            <li><a href="#skills"><span class="nav-number">03.</span>Habilidades</a></li>
+            <li><a href="#projects"><span class="nav-number">04.</span>Projetos</a></li>
+            <li><a href="#contact"><span class="nav-number">05.</span>Contato</a></li>
         </ul>
     </nav>
 
-    <!-- Seção Inicial -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Olá, eu sou Ismael Pereira!</h1>
-            <p>Desenvolvedor Web</p>
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-greeting">Olá, meu nome é</p>
+                <h1 class="hero-name">Ismael Pereira.</h1>
+                <h2 class="hero-tagline">Eu construo experiências digitais.</h2>
+                <p class="hero-description">
+                    Sou um desenvolvedor web especializado em criar soluções digitais eficientes e elegantes. 
+                    Meu foco é transformar ideias em experiências web funcionais e atraentes.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-button">Ver Projetos</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
     </section>
 
-    <!-- Seção Sobre -->
+    <!-- About Section -->
     <section id="about" class="about">
-        <h2>Sobre Mim</h2>
-        <div class="about-content">
-            <img src="assets/images/profile.png" alt="Foto de Perfil" class="profile-img">
-            <div class="about-text">
-                <p>Sou um desenvolvedor web focado em criar soluções digitais eficientes e elegantes. Com conhecimento em tecnologias como HTML, CSS, JavaScript, MySQL e Supabase, busco transformar ideias em experiências web funcionais e atraentes.</p>
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-number">02.</span>
+                <h2>Sobre Mim</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Sou um desenvolvedor web focado em criar soluções digitais eficientes e elegantes. 
+                        Com conhecimento em tecnologias como HTML, CSS, JavaScript, MySQL e Supabase, 
+                        busco transformar ideias em experiências web funcionais e atraentes.
+                    </p>
+                    
+                    <p>
+                        Minha jornada no Desenvolvimento web é movida pela curiosidade e pelo desejo constante de aprender. 
+                        Acredito que cada projeto é uma oportunidade de crescimento e de resolver problemas de forma criativa.
+                    </p>
+                    
+                    <p>
+                        Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:
+                    </p>
+                    
+                    <ul class="tech-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Supabase</li>
+                        <li>No-Code</li>
+                        <li>Prompt IA</li>
+                    </ul>
+                </div>
                 
-                <p>Minha jornada no Desenvolvimento web é movida pela curiosidade e pelo desejo constante de aprender. Acredito que cada projeto é uma oportunidade de crescimento e de resolver problemas de forma criativa.</p>
-                
-                <div class="about-details">
-                    <div class="detail-item">
-                        <strong>Localização:</strong> Brasil
-                    </div>
-                    <div class="detail-item">
-                        <strong>Foco:</strong> Desenvolvimento Web
+                <div class="profile-wrapper">
+                    <div class="profile-img-container">
+                        <img src="assets/images/profile.png" alt="Foto de Perfil" class="profile-img">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Habilidades -->
+    <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2>Minhas Habilidades</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 85%;"></div>
-                </div>
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-number">03.</span>
+                <h2>Minhas Habilidades</h2>
             </div>
-            <div class="skill-item">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 80%;"></div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="skill-name">HTML5</h3>
+                    <p>Desenvolvimento de estruturas semânticas e acessíveis para websites modernos.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="85"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 30%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="skill-name">CSS3</h3>
+                    <p>Criação de layouts responsivos e animações fluidas para melhor experiência do usuário.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="80"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-php"></i>
-                <span>PHP</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 30%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <p>Desenvolvimento de funcionalidades interativas e dinâmicas para websites.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="30"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-database"></i>
-                <span>MySQL</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 60%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="skill-name">PHP</h3>
+                    <p>Criação de aplicações web dinâmicas com integração a bancos de dados.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="30"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-cloud"></i>
-                <span>Supabase</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 60%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-name">MySQL</h3>
+                    <p>Gerenciamento e otimização de bancos de dados relacionais para aplicações web.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="60"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-magic"></i>
-                <span>No-Code</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 70%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="skill-name">Supabase</h3>
+                    <p>Utilização de plataforma open source para criação de backends com APIs instantâneas.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="60"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-robot"></i>
-                <span>Prompt IA</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 65%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="skill-name">No-Code</h3>
+                    <p>Desenvolvimento de soluções utilizando plataformas sem código para agilizar processos.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="70"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-palette"></i>
-                <span>Photoshop</span>
-                <div class="skill-level">
-                    <div class="skill-level-bar" style="width: 50%;"></div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="skill-name">Prompt IA</h3>
+                    <p>Criação de prompts eficientes para geração de conteúdo e soluções com inteligência artificial.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="65"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="skill-name">Photoshop</h3>
+                    <p>Edição e manipulação de imagens para uso em projetos web e materiais de marketing.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" data-level="50"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Projetos -->
+    <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2>Projetos</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projetos/projeto1.png" alt="Página da AllStar Sports">
-                </div>
-                <div class="project-info">
-                    <h3>AllStar Sports</h3>
-                    <p>Landing page de apresentação para uma loja de esportes, contendo detalhes sobre a loja e seus produtos.</p>
-                    <div class="project-technologies">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ismapereira/AllStar-Sports---Novo-Site" class="btn btn-github" target="_blank">
-                            <i class="fab fa-github"></i> Repositório
-                        </a>
-                        <a href="https://allstarsports.vercel.app/" class="btn btn-demo" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-number">04.</span>
+                <h2>Meus Projetos</h2>
             </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projetos/projeto2.png" alt="Sistema de Gestão Encantella">
-                </div>
-                <div class="project-info">
-                    <h3>Encantella - Sistema de Gestão</h3>
-                    <p>Sistema de gestão para uma papelaria personalizada, contendo cadastro de clientes, pedidos, aniversários e dashboard financeiro.</p>
-                    <div class="project-technologies">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>MySQL</span>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projetos/projeto1.png" alt="Página da AllStar Sports">
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-github" target="_blank">
-                            <i class="fab fa-github"></i> Repositório
-                        </a>
-                        <a href="https://encantella.infinityfreeapp.com/" class="btn btn-demo" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projetos/projeto3.png" alt="Página do Instituto Parquelândia">
-                </div>
-                <div class="project-info">
-                    <h3>Página do Instituto Parquelândia</h3>
-                    <p>Página criada para o Instituto Parquelândia, onde o usuário pode conhecer mais sobre o instituto, seus eventos e suas ações sociais.</p>
-                    <div class="project-technologies">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ismapereira/Instituto-Parqul-ndia" class="btn btn-github" target="_blank">
-                            <i class="fab fa-github"></i> Repositório
-                        </a>
-                        <a href="https://ismapereira.github.io/Instituto-Parqul-ndia/" class="btn btn-demo" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">AllStar Sports</h3>
+                            <p class="project-description">Landing page de apresentação para uma loja de esportes, contendo detalhes sobre a loja e seus produtos.</p>
+                        </div>
+                        <div class="project-tech-list">
+                            <span class="project-tech-item">HTML</span>
+                            <span class="project-tech-item">CSS</span>
+                            <span class="project-tech-item">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ismapereira/AllStar-Sports---Novo-Site" class="project-link" target="_blank" aria-label="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://allstarsports.com.br" class="project-link" target="_blank" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projetos/projeto4.png" alt="Projeto 4">
-                </div>
-                <div class="project-info">
-                    <h3>Sistema de Gestão da AllStar Sports</h3>
-                    <p>Sistema desenvolvido de forma assistida com IA para a gestão completa da loja AllStar Sports. O projeto é completamente funcional e possui total gestão de clientes, produtos, pedidos e dashboard financeiro.</p>
-                    <div class="project-technologies">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>AI</span>
-                        <span>No-Code</span>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projetos/projeto2.png" alt="Página do Desafio Codewell">
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-github" target="_blank">
-                            <i class="fab fa-github"></i> Repositório
-                        </a>
-                        <a href="http://sisadminallstarsports.infinityfreeapp.com/index.php" class="btn btn-demo" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Encantella</h3>
+                            <p class="project-description">Projeto desenvolvido para a gestão completa da papelaria personalizada Encantella.</p>
+                        </div>
+                        <div class="project-tech-list">
+                            <span class="project-tech-item">HTML</span>
+                            <span class="project-tech-item">CSS</span>
+                            <span class="project-tech-item">PHP</span>
+                            <span class="project-tech-item">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" target="_blank" aria-label="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://encantella.infinityfreeapp.com/" class="project-link" target="_blank" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projetos/projeto3.png" alt="Página do Projeto Supabase">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Instituto Parquelândia</h3>
+                            <p class="project-description">Página de apresentação do Instituto Parquelândia, um instituto social de apoio à comunidade.</p>
+                        </div>
+                        <div class="project-tech-list">
+                            <span class="project-tech-item">HTML</span>
+                            <span class="project-tech-item">CSS</span>
+                            <span class="project-tech-item">JavaScript</span>
+                            <span class="project-tech-item">No-Code</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ismapereira/Instituto-Parqul-ndia" class="project-link" target="_blank" aria-label="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://ismapereira.github.io/Instituto-Parqul-ndia/" class="project-link" target="_blank" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projetos/projeto4.png" alt="Projeto 4">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">AllStar Sports</h3>
+                            <p class="project-description">Sistema desenvolvido para gestão completa da loja AllStar Sports.</p>
+                        </div>
+                        <div class="project-tech-list">
+                            <span class="project-tech-item">HTML</span>
+                            <span class="project-tech-item">CSS</span>
+                            <span class="project-tech-item">JavaScript</span>
+                            <span class="project-tech-item">PHP</span>
+                            <span class="project-tech-item">MySQL</span>
+                            <span class="project-tech-item">No-Code</span>
+                            <span class="project-tech-item">Prompt IA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" target="_blank" aria-label="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" target="_blank" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Contato -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contato</h2>
-        <form id="contact-form" class="contact-form">
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+        <div class="container">
+            <span class="contact-subtitle">05. O que vem a seguir?</span>
+            <h2 class="contact-title">Entre em Contato</h2>
+            <p class="contact-text">
+                Estou disponível para projetos freelance, oportunidades de trabalho ou apenas para trocar ideias sobre desenvolvimento web.
+                Minha caixa de entrada está sempre aberta!
+            </p>
+            
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Enviar Mensagem</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Seu Email" required>
-            </div>
-            <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input 
-                    type="tel" 
-                    id="telefone" 
-                    name="telefone" 
-                    placeholder="(DDD) 9 1234-5678" 
-                    required 
-                    aria-required="true"
-                >
-                <small class="form-text text-muted">Digite seu telefone com DDD. Exemplo: (00) 9 1234-5678</small>
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
-            </div>
-            <button type="submit">Enviar Mensagem</button>
-        </form>
+        </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/ismapereira" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/ismael-pereira-feitosa-ba2aa91a9/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://wa.me/5575991129432" target="_blank" class="social-link">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <p class="copyright">
-                &copy; 2024 Ismael Pereira. Todos os direitos reservados.
-            </p>
+        <div class="footer-social">
+            <a href="https://github.com/ismapereira" class="social-link" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/ismael-pereira" class="social-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
         </div>
+        <p class="footer-text">&copy; 2025 Ismael Pereira. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Botão Voltar ao Topo -->
-    <a href="#" class="back-to-top" id="back-to-top">
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- IMask.js para formatação de inputs -->
-    <script src="https://unpkg.com/imask"></script>
-
-    <!-- Scripts JavaScript -->
-     <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- SweetAlert2 para notificações bonitas -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/imask"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/js/typing-animation.js"></script>
-    <script src="assets/js/bubble-background.js"></script>
+    <script src="assets/js/gsap-modern.js"></script>
 </body>
 </html>
