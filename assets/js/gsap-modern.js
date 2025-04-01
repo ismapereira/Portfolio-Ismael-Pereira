@@ -839,66 +839,62 @@ function createFloatingShapes() {
 
 // Footer Animation
 function initFooterAnimation() {
-  const footer = document.querySelector('.footer');
-  const footerContainer = document.querySelector('.footer-container');
+  // Selecionar elementos
   const footerColumns = document.querySelectorAll('.footer-column');
   const footerBottom = document.querySelector('.footer-bottom');
   const footerSocial = document.querySelector('.footer-social');
-  const footerText = document.querySelector('.footer-text');
   
-  if (!footer) return;
+  // Verificar se os elementos existem
+  if (!footerColumns.length || !footerBottom || !footerSocial) {
+    console.log("Elementos do footer não encontrados");
+    return;
+  }
   
-  // Definir estado inicial
-  gsap.set(footerColumns, { y: 50, opacity: 0 });
-  gsap.set(footerBottom, { y: 30, opacity: 0 });
+  console.log("Inicializando animação do footer");
   
-  // Criando a timeline para a animação do footer
-  const footerTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: footer,
-      start: 'top bottom-=100',
-      end: 'center bottom',
-      toggleActions: 'play none none none'
-    }
+  // Animação simples para os elementos do footer
+  gsap.from(footerColumns, {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'back.out(1.2)',
+    delay: 0.3
   });
   
-  // Animação principal do footer surgindo
-  footerTl
-    .from(footer, {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    })
-    .to(footerColumns, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'back.out(1.5)'
-    }, '-=0.4')
-    .to(footerBottom, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.2')
-    .to(footerSocial.querySelectorAll('a'), {
-      scale: 1,
-      opacity: 1,
-      duration: 0.4,
-      stagger: 0.05,
-      ease: 'back.out(1.7)'
-    }, '-=0.4');
+  gsap.from(footerBottom, {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power2.out',
+    delay: 0.8
+  });
+  
+  gsap.from(footerSocial.querySelectorAll('a'), {
+    scale: 0.5,
+    opacity: 0,
+    duration: 0.4,
+    stagger: 0.1,
+    ease: 'back.out(1.7)',
+    delay: 1
+  });
 }
 
 // Criar partículas para o footer
 function createFooterParticles() {
   const footerParticles = document.querySelector('.footer-particles');
-  if (!footerParticles) return;
+  if (!footerParticles) {
+    console.log("Container de partículas não encontrado");
+    return;
+  }
+  
+  console.log("Criando partículas para o footer");
+  
+  // Limpar partículas existentes
+  footerParticles.innerHTML = '';
   
   // Número de partículas
-  const particleCount = 20;
+  const particleCount = 15;
   
   // Criar partículas
   for (let i = 0; i < particleCount; i++) {
@@ -908,32 +904,22 @@ function createFooterParticles() {
     // Posição aleatória
     const x = Math.random() * 100;
     const y = Math.random() * 100;
-    const size = Math.random() * 5 + 2;
-    const duration = Math.random() * 20 + 10;
+    const size = Math.random() * 4 + 2;
+    const duration = Math.random() * 15 + 10;
     const delay = Math.random() * 5;
     
     // Aplicar estilos
-    gsap.set(particle, {
-      x: `${x}%`,
-      y: `${y}%`,
-      width: size,
-      height: size,
-      opacity: Math.random() * 0.5 + 0.1
-    });
+    particle.style.left = `${x}%`;
+    particle.style.top = `${y}%`;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.opacity = `${Math.random() * 0.5 + 0.1}`;
     
     // Adicionar ao container
     footerParticles.appendChild(particle);
     
-    // Animar partícula
-    gsap.to(particle, {
-      y: `${y - 20 - Math.random() * 40}%`,
-      x: `${x + Math.random() * 20 - 10}%`,
-      opacity: 0,
-      duration: duration,
-      delay: delay,
-      repeat: -1,
-      ease: 'power1.inOut'
-    });
+    // Animar partícula com CSS para melhor performance
+    particle.style.animation = `floatParticle ${duration}s ${delay}s infinite ease-in-out`;
   }
 }
 
