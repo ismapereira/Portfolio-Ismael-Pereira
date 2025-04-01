@@ -685,6 +685,11 @@ section {
   flex-direction: column;
   flex-grow: 1;
   transition: var(--transition);
+  gap: var(--space-md);
+}
+
+.project-header {
+  margin-bottom: var(--space-sm);
 }
 
 .project-title {
@@ -699,38 +704,55 @@ section {
 }
 
 .project-description {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   font-size: 0.9rem;
+  line-height: 1.6;
   opacity: 0.8;
-  flex-grow: 1;
+  min-height: 60px;
 }
 
-.project-tech {
+.project-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: 8px;
   margin-bottom: var(--space-md);
+  margin-top: auto;
 }
 
-.project-tech span {
+.project-tech-item {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--color-primary);
+  background-color: rgba(100, 255, 218, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: var(--transition);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.project-card:hover .project-tech-item {
+  background-color: rgba(100, 255, 218, 0.15);
+  transform: translateY(-2px);
 }
 
 .project-links {
   display: flex;
   gap: var(--space-md);
+  margin-top: var(--space-sm);
+  justify-content: flex-end;
 }
 
 .project-links a {
   color: var(--color-light);
   font-size: 1.25rem;
   transition: var(--transition);
+  padding: 5px;
 }
 
 .project-links a:hover {
   color: var(--color-primary);
+  transform: translateY(-3px);
 }
 
 /* ===== CONTACT SECTION ===== */
