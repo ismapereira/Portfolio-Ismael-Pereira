@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectCardAnimations();
     initSkillBars();
     initContactFormAnimation();
+    initFooterAnimation();
+    createFooterParticles();
     
     // Enable scrolling after animations are initialized
     document.body.classList.remove('no-scroll');
@@ -833,6 +835,106 @@ function createFloatingShapes() {
       rotation
     });
   });
+}
+
+// Footer Animation
+function initFooterAnimation() {
+  const footer = document.querySelector('.footer');
+  const footerContainer = document.querySelector('.footer-container');
+  const footerColumns = document.querySelectorAll('.footer-column');
+  const footerBottom = document.querySelector('.footer-bottom');
+  const footerSocial = document.querySelector('.footer-social');
+  const footerText = document.querySelector('.footer-text');
+  
+  if (!footer) return;
+  
+  // Definir estado inicial
+  gsap.set(footerColumns, { y: 50, opacity: 0 });
+  gsap.set(footerBottom, { y: 30, opacity: 0 });
+  
+  // Criando a timeline para a animação do footer
+  const footerTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: footer,
+      start: 'top bottom-=100',
+      end: 'center bottom',
+      toggleActions: 'play none none none'
+    }
+  });
+  
+  // Animação principal do footer surgindo
+  footerTl
+    .from(footer, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .to(footerColumns, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'back.out(1.5)'
+    }, '-=0.4')
+    .to(footerBottom, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.2')
+    .to(footerSocial.querySelectorAll('a'), {
+      scale: 1,
+      opacity: 1,
+      duration: 0.4,
+      stagger: 0.05,
+      ease: 'back.out(1.7)'
+    }, '-=0.4');
+}
+
+// Criar partículas para o footer
+function createFooterParticles() {
+  const footerParticles = document.querySelector('.footer-particles');
+  if (!footerParticles) return;
+  
+  // Número de partículas
+  const particleCount = 20;
+  
+  // Criar partículas
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('footer-particle');
+    
+    // Posição aleatória
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const size = Math.random() * 5 + 2;
+    const duration = Math.random() * 20 + 10;
+    const delay = Math.random() * 5;
+    
+    // Aplicar estilos
+    gsap.set(particle, {
+      x: `${x}%`,
+      y: `${y}%`,
+      width: size,
+      height: size,
+      opacity: Math.random() * 0.5 + 0.1
+    });
+    
+    // Adicionar ao container
+    footerParticles.appendChild(particle);
+    
+    // Animar partícula
+    gsap.to(particle, {
+      y: `${y - 20 - Math.random() * 40}%`,
+      x: `${x + Math.random() * 20 - 10}%`,
+      opacity: 0,
+      duration: duration,
+      delay: delay,
+      repeat: -1,
+      ease: 'power1.inOut'
+    });
+  }
 }
 
 // Utility function for random number generation
