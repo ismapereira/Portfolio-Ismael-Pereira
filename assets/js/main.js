@@ -50,17 +50,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.textContent = 'Enviando...';
                     submitButton.disabled = true;
                     
+                    // Configuração personalizada do SweetAlert2
+                    const sweetAlertCustomStyle = {
+                        title: 'Mensagem Enviada!',
+                        text: 'Obrigado por entrar em contato. Retornarei em breve.',
+                        icon: 'success',
+                        background: '#0a192f',
+                        color: '#ccd6f6',
+                        confirmButtonColor: '#64ffda',
+                        confirmButtonText: 'Fechar',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeIn'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOut'
+                        },
+                        customClass: {
+                            title: 'swal-title',
+                            content: 'swal-content',
+                            confirmButton: 'swal-button'
+                        }
+                    };
+
                     // Enviar email usando EmailJS (sintaxe da versão 3)
                     emailjs.sendForm('email_ismaelportfolio', 'template_i1c5xzj', form, 'J3NvibQuHD_o_q_8Y')
                         .then(function(response) {
                             console.log("Email enviado com sucesso:", response);
                             // Sucesso no envio
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Mensagem Enviada!',
-                                text: 'Obrigado por entrar em contato. Retornarei em breve.',
-                                confirmButtonColor: '#64ffda'
-                            });
+                            Swal.fire(sweetAlertCustomStyle);
                             form.reset();
                             telefoneMask.value = ''; // Limpar máscara
                         }, function(error) {
@@ -70,7 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                 icon: 'error',
                                 title: 'Ops! Algo deu errado',
                                 text: 'Não foi possível enviar a mensagem. Por favor, tente novamente.',
-                                confirmButtonColor: '#ee9b00'
+                                background: '#0a192f',
+                                color: '#ccd6f6',
+                                confirmButtonColor: '#ee9b00',
+                                confirmButtonText: 'Tentar novamente',
+                                customClass: {
+                                    title: 'swal-title',
+                                    content: 'swal-content',
+                                    confirmButton: 'swal-button'
+                                }
                             });
                             console.error('Erro no EmailJS:', error);
                         }).finally(() => {
