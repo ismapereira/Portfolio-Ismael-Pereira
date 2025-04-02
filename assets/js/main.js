@@ -27,7 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Inicializar EmailJS com a chave pública
             // Usando try/catch para evitar erros caso o EmailJS não esteja carregado
             try {
-                emailjs.init("J3NvibQuHD_o_q_8Y");
+                (function() {
+                    // https://dashboard.emailjs.com/admin/account
+                    emailjs.init({
+                        publicKey: "J3NvibQuHD_o_q_8Y",
+                    });
+                })();
+                console.log("EmailJS inicializado com sucesso");
             } catch (error) {
                 console.error("Erro ao inicializar EmailJS:", error);
             }
@@ -38,30 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Validação de campos
                 if (!validateForm()) return;
 
-                // Desabilitar botão durante o envio
-                submitButton.textContent = 'Enviando...';
-                submitButton.disabled = true;
-
-                // Coleta dados do formulário
-                const formData = {
-                    from_name: form.nome.value.trim(),
-                    from_email: form.email.value.trim(),
-                    from_phone: telefoneMask.unmaskedValue, // Valor sem máscara
-                    message: form.mensagem.value.trim()
-                };
-
-                // Log de depuração
-                console.log('Dados enviados para EmailJS:', formData);
-
                 // Verificar se o EmailJS está disponível
                 if (typeof emailjs !== 'undefined') {
-                    // Enviar email usando EmailJS
-                    emailjs.send(
-                        "service_ismaelportifolio",    // Serviço atualizado
-                        "template_i1c5xzj",            // Template ID
-                        formData
-                    ).then(
-                        function(response) {
+                    // Desabilitar botão durante o envio
+                    submitButton.textContent = 'Enviando...';
+                    submitButton.disabled = true;
+                    
+                    // Enviar email usando EmailJS (sintaxe da versão 3)
+                    emailjs.sendForm('email_ismaelportfolio', 'template_i1c5xzj', form, 'J3NvibQuHD_o_q_8Y')
+                        .then(function(response) {
+                            console.log("Email enviado com sucesso:", response);
                             // Sucesso no envio
                             Swal.fire({
                                 icon: 'success',
@@ -71,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             });
                             form.reset();
                             telefoneMask.value = ''; // Limpar máscara
-                        },
-                        function(error) {
+                        }, function(error) {
+                            console.error("Erro detalhado do EmailJS:", error);
                             // Erro no envio
                             Swal.fire({
                                 icon: 'error',
@@ -81,12 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 confirmButtonColor: '#ee9b00'
                             });
                             console.error('Erro no EmailJS:', error);
-                        }
-                    ).finally(() => {
-                        // Reabilitar botão
-                        submitButton.textContent = 'Enviar Mensagem';
-                        submitButton.disabled = false;
-                    });
+                        }).finally(() => {
+                            // Reabilitar botão
+                            submitButton.textContent = 'Enviar Mensagem';
+                            submitButton.disabled = false;
+                        });
                 } else {
                     // Se o EmailJS não estiver disponível
                     Swal.fire({
