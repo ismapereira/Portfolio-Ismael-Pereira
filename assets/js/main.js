@@ -185,6 +185,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Script para filtrar projetos por categoria
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover classe ativa de todos os botões
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Adicionar classe ativa ao botão clicado
+            button.classList.add('active');
+            
+            // Obter categoria a ser filtrada
+            const filterValue = button.getAttribute('data-filter');
+            
+            // Filtrar projetos
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                    // Animar a entrada do card
+                    gsap.to(card, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.4,
+                        ease: 'power2.out'
+                    });
+                } else {
+                    // Animar a saída do card
+                    gsap.to(card, {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.3,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    });
+});
+
 // Função para adicionar efeito de rolagem suave
 function setupSmoothScroll() {
     // Atualizado para selecionar os links de navegação no novo layout

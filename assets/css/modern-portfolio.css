@@ -862,6 +862,36 @@ section {
   transform: translateY(-3px);
 }
 
+.project-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.status-development {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.status-completed {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
 /* ===== CONTACT SECTION ===== */
 .contact {
   text-align: center;
@@ -1267,12 +1297,8 @@ section {
     padding: 0 var(--space-md);
   }
   
-  .about-content {
-    flex-direction: column;
-  }
-  
-  .about-text {
-    margin-top: var(--space-xl);
+  .section-heading h2 {
+    font-size: 1.5rem;
   }
   
   .skills-grid {
@@ -1316,7 +1342,7 @@ section {
   }
   
   .section-heading h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   .hero-name {
