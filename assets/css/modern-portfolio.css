@@ -689,6 +689,29 @@ section {
 
 /* Removed skill level bars */
 
+/* Estilo para ícones */
+.skill-icon i {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Ajuste para os ícones */
+.skill-icon i {
+  font-size: 1.8em;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Ajuste específico para ícones do Devicons */
+.devicon-photoshop-plain {
+  font-size: 1.8em;
+}
+
 /* ===== PROJECTS SECTION ===== */
 .projects-grid {
   display: grid;
