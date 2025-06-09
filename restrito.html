@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito | Ismael Pereira</title>
+    <meta name="description" content="Página de acesso restrito - Portfólio de Ismael Pereira">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/modern-portfolio.css">
+    <link rel="stylesheet" href="assets/css/bubble-background.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Estilos específicos para a página de restrito */
+        .restricted-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .restricted-content {
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: var(--border-radius-md);
+            padding: 3rem 2rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+        
+        .restricted-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.9);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+        
+        .restricted-icon {
+            font-size: 4rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .restricted-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-light);
+        }
+        
+        .restricted-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--color-text-light);
+            opacity: 0.9;
+        }
+        
+        .btn-restricted {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            border-radius: var(--border-radius-sm);
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .btn-restricted:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .restricted-title {
+                font-size: 2rem;
+            }
+            
+            .restricted-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <!-- Background Bubbles -->
+    <div class="bubble-background">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="restricted-container">
+        <div class="restricted-content">
+            <div class="restricted-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h1 class="restricted-title">Acesso Restrito</h1>
+            <p class="restricted-text">
+                Este repositório está com acesso restrito por se tratar de um projeto concluído. 
+                Por motivos de segurança e confidencialidade, não é possível torná-lo público.
+            </p>
+            <p class="restricted-text">
+                Caso você seja um recrutador ou cliente interessado em conhecer mais sobre meu trabalho, 
+                estou à disposição para apresentar detalhes relevantes em um contato direto.
+            </p>            
+            <div class="button-group" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn-restricted">
+                    <i class="fas fa-home"></i> Voltar ao Início
+                </a>
+                <a href="index.html#contact" class="btn-restricted">
+                    <i class="fas fa-envelope"></i> Entrar em Contato
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
