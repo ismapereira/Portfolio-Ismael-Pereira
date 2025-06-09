@@ -669,11 +669,11 @@ section {
 }
 
 .skill-icon {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   color: var(--color-primary);
   margin-bottom: var(--space-md);
   transition: var(--transition);
-}
+}  
 
 .skill-name {
   margin-bottom: var(--space-sm);
@@ -705,11 +705,6 @@ section {
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
-}
-
-/* Ajuste específico para ícones do Devicons */
-.devicon-photoshop-plain {
-  font-size: 1.8em;
 }
 
 /* ===== PROJECTS SECTION ===== */
