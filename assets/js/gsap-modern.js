@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createFloatingShapes();
     initTextAnimations();
     initProjectCardAnimations();
-    initSkillBars();
     initContactFormAnimation();
     initFooterAnimation();
     createFooterParticles();
@@ -389,30 +388,7 @@ function initSectionAnimations() {
   }
 }
 
-// Skill bars animation
-function initSkillBars() {
-  const skillLevelBars = document.querySelectorAll('.skill-level-bar');
-  
-  if (skillLevelBars.length) {
-    // Garantir que as barras estejam visíveis inicialmente com largura 0
-    gsap.set(skillLevelBars, { width: '0%', opacity: 1 });
-    
-    skillLevelBars.forEach(bar => {
-      const level = bar.getAttribute('data-level');
-      
-      gsap.to(bar, {
-        width: `${level}%`,
-        duration: 1.5,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: bar,
-          start: 'top 85%',
-          once: true
-        }
-      });
-    });
-  }
-}
+// Função de animação de habilidades (barras de nível removidas)
 
 // Project card animations
 function initProjectCardAnimations() {
