@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /restrito.html
+Disallow: /design.html
+
+Sitemap: https://ismaelpereira.vercel.app/sitemap.xml
